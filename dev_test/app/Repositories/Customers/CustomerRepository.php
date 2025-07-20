@@ -11,17 +11,7 @@ class CustomerRepository implements CustomerRepositoryInterface
     {
         $query = Customer::query();
 
-        if (!empty($filters['name'])) {
-            $query->where('name', 'like', '%' . $filters['name'] . '%');
-        }
-
-        if (!empty($filters['cpf'])) {
-            $query->where('cpf', $filters['cpf']);
-        }
-
-        if (!empty($filters['cep'])) {
-            $query->where('cep', $filters['cep']);
-        }
+        $query->filter($filters);
 
         return $query->paginate($perPage);
     }

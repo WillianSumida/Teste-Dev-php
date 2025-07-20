@@ -41,7 +41,7 @@ class CustomerController extends Controller
         }
     }
 
-    public function create(CreateCustomerRequest $request)
+    public function create(CreateCustomerRequest $request): JsonResponse
     {
         try {
             $customer = $this->customerRepository->create($request->validated());
