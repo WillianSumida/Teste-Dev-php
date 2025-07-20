@@ -284,6 +284,7 @@ sudo docker exec -it laravel-app php artisan migrate
 
   ```bash
   sudo docker exec -it laravel-app php artisan <comando>
+  sudo docker exec -it laravel-app php artisan test --filter CustomerTest
   ```
 
 ---
